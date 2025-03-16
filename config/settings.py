@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+from dotenv import load_dotenv
+
+# Load environment variables from the .env file
+load_dotenv()
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -84,6 +90,7 @@ DATABASES = {
         "PORT": os.getenv("DATABASE_PORT"),
     }
 }
+
 
 
 # Password validation
